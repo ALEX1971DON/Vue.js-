@@ -17,8 +17,8 @@
 	<div id="app">
 		<h1>список дел</h1>
 		<input type="text" v-model="itemForAdd" class="mainInput">
-		<button v-on:click="add">Добавить задачу</button>
-		<button v-on:click="del">Удалить задачу</button>
+		<button class="button" v-on:click="add">Добавить задачу</button>
+		<button class="button" v-on:click="del">Удалить задачу</button>
 
 
 		<div class="filter">
@@ -37,27 +37,31 @@
 
 		</div>
 
+		<div class="sort">
+			<div>
+				<label for="sort1">Сортировать по имени</label>
+				<input type="radio" name="sort1" id="sort1" v-on:click="sort1">
+			</div>
 
-		<div>
-			<label for="sort1">Сортировать по имени</label>
-			<input type="radio" name="sort1" id="sort1" v-on:click="sort1">
+			<div>
+				<label for="sort2">сортировать ранние</label>
+				<input type="radio" name="sort1" id="sort2" v-on:click="sort2">
+			</div>
+
+			<div>
+				<label for="sort3">сортировать поздние</label>
+				<input type="radio" name="sort1" id="sort3" v-on:click="sort3">
+			</div>
+
 		</div>
 
-		<div>
-			<label for="sort2">сортировать ранние</label>
-			<input type="radio" name="sort1" id="sort2" v-on:click="sort2">
+		<div class="displey">
+
+			<todo-item v-for="(todo,index) in todoList" :todo="todo" :key="todo.id" :index="index"
+				v-on:complete-todo="makeDone(index)" v-on:dblclick="del(index)"
+				:class="{noActive: todo.noActive}"></todo-item>
+
 		</div>
-
-		<div>
-			<label for="sort3">сортировать поздние</label>
-			<input type="radio" name="sort1" id="sort3" v-on:click="sort3">
-		</div>
-
-		<todo-item v-for="(todo,index) in todoList" :todo="todo" :key="todo.id" :index="index"
-			v-on:complete-todo="makeDone(index)" v-on:dblclick="del(index)"
-			:class="{noActive: todo.noActive}"></todo-item>
-
-
 
 	</div>
 

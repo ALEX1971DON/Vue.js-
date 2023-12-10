@@ -1,3 +1,56 @@
 .noActive {
 	display: none;
 }
+
+#app {
+	background-color: rgb(134, 195, 195);
+	width: 500px;
+}
+
+h1 {
+	color: brown;
+	text-align: center;
+
+}
+
+.mainInput {
+	width: 470px;
+	height: 50px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	font-size: 18px;
+}
+
+.button {
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	margin-left: 30px;
+	font-size: 18px;
+}
+
+.filter,
+.sort {
+	border: 1px solid #000;
+	border-radius: 10px;
+	width: 200px;
+	padding: 2px;
+	margin-left: 150px;
+	margin-top: 10px;
+}
+
+.filter input,
+.sort input {
+	float: right;
+}
+
+.displey {
+	margin-left: 10px;
+	font-size: 18px;
+}
+
+.displey input {
+	float: right;
+	margin-right: 15px;
+}
