@@ -55,7 +55,7 @@
 
 		<todo-item v-for="(todo,index) in todoList" :todo="todo" :key="todo.id" :index="index"
 			v-on:complete-todo="makeDone(index)" v-on:dblclick="del(index)"
-			:class="{noactive: todo.noActive}"></todo-item>
+			:class="{noActive: todo.noActive}"></todo-item>
 
 
 
